@@ -13,8 +13,12 @@ if (!MONGO_URL) {
   Deno.exit(1);
 }
 
-await mongoose.connect(MONGO_URL);
-
+try{
+  await mongoose.connect(MONGO_URL);
+  }
+  catch(e){
+    console.log("error");
+  }
 const app = express();
 app.use(express.json());
 
