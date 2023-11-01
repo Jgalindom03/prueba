@@ -17,6 +17,7 @@ await mongoose.connect(MONGO_URL);
 
 const app = express();
 app.use(express.json());
+
 app.get("/api/mascotas", async(_req:Request, res:Response) => { //Get de todas las mascotas
   try{
     const mascotas = await getMascota;
